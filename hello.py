@@ -14,4 +14,4 @@ fruits = ['Apple', 'Orange', 'Pear', 'Banana']
 for fruit in fruits:
     print ("Current fruit: ", fruit)
 
-print("\n Line spacing") 
+print("\n Line spacing", fruit)
