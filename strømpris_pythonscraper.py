@@ -2,8 +2,10 @@
 
 import requests
 from bs4 import BeautifulSoup
+from datetime import date
 
 price = 0.0                                                     # Erklærer variabelen price i minnet
+today = date.today()                                            # Henter dagens dato
 #print(price)                                                   # >>>0.0
 
 def find_price():
@@ -21,6 +23,8 @@ def find_price():
     price_without_comma = f"{found_price[0]}.{found_price[2:]}" # Strikke sammen tallene og legge til et punktum i stedet for komma
     price = float(price_without_comma)                          # Caste prisen til en float
 
+dagens_dato = today.strftime("%d.%B %Y")
+
 find_price()                                                    # Kjører funkjsonen find_price()
-dagens_strømpris = f"{price} øre/kWh"                           # Legge til hva prisen regnes i
-print(dagens_strømpris)                                         # >>>[Dagens strømpris]
+dagens_strømpris = f"{dagens_dato}: {price} øre/kWh"            # Legge til hva prisen regnes i
+print(dagens_strømpris)                                         # >>>29.September 2020: 2.65 øre/kWh
