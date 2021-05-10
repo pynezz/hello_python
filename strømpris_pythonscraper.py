@@ -1,6 +1,7 @@
 #   Et skript som henter dagens strømpris
 
 import requests
+from flask import Flask
 from bs4 import BeautifulSoup
 from datetime import date
 
